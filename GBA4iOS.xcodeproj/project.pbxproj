@@ -252,7 +252,6 @@
 		BFF70ED519BD0CAF00009DAF /* UITableViewController+ControllerSkins.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF70ED319BD0CAF00009DAF /* UITableViewController+ControllerSkins.m */; };
 		BFF70ED919BE667900009DAF /* GBAControllerSkinImageResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF70ED819BE667900009DAF /* GBAControllerSkinImageResponseSerializer.m */; };
 		BFF70EDA19BE667900009DAF /* GBAControllerSkinImageResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF70ED819BE667900009DAF /* GBAControllerSkinImageResponseSerializer.m */; };
-		BFF7615219E731D800C403A0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF7615119E731D800C403A0 /* libPods.a */; };
 		BFFA355217ECD2A70038D34F /* Default.gbaskin in Resources */ = {isa = PBXBuildFile; fileRef = BFFA355117ECD2A70038D34F /* Default.gbaskin */; };
 		BFFBCCD61850505A005187DF /* GBASyncAllFilesOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFFBCCD51850505A005187DF /* GBASyncAllFilesOperation.mm */; };
 		BFFBCCD71850505A005187DF /* GBASyncAllFilesOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFFBCCD51850505A005187DF /* GBASyncAllFilesOperation.mm */; };
@@ -689,7 +688,6 @@
 		BFF70ED319BD0CAF00009DAF /* UITableViewController+ControllerSkins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+ControllerSkins.m"; sourceTree = "<group>"; };
 		BFF70ED719BE667900009DAF /* GBAControllerSkinImageResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBAControllerSkinImageResponseSerializer.h; sourceTree = "<group>"; };
 		BFF70ED819BE667900009DAF /* GBAControllerSkinImageResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBAControllerSkinImageResponseSerializer.m; sourceTree = "<group>"; };
-		BFF7615119E731D800C403A0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		BFFA355117ECD2A70038D34F /* Default.gbaskin */ = {isa = PBXFileReference; lastKnownFileType = file; name = Default.gbaskin; path = Skins/Default/GBA/Purple/Default.gbaskin; sourceTree = SOURCE_ROOT; };
 		BFFBCCD41850505A005187DF /* GBASyncAllFilesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBASyncAllFilesOperation.h; sourceTree = "<group>"; };
 		BFFBCCD51850505A005187DF /* GBASyncAllFilesOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GBASyncAllFilesOperation.mm; sourceTree = "<group>"; };
@@ -744,7 +742,6 @@
 		CC2D570F1798F2EC00C616EB /* GBAAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GBAAppDelegate.mm; sourceTree = "<group>"; };
 		CC2D57121798F2EC00C616EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Emulation.storyboard; sourceTree = "<group>"; };
 		CC2D571A1798F2EC00C616EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CC2D57211798F2ED00C616EB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CC2D573F1798F44700C616EB /* GBAROMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBAROMTableViewController.h; sourceTree = "<group>"; };
 		CC2D57401798F44700C616EB /* GBAROMTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GBAROMTableViewController.mm; sourceTree = "<group>"; };
 		CC33F0E117E9630F00F57D66 /* RSTFileBrowserTableViewCell+LongPressGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RSTFileBrowserTableViewCell+LongPressGestureRecognizer.h"; sourceTree = "<group>"; };
@@ -952,7 +949,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFF7615219E731D800C403A0 /* libPods.a in Frameworks */,
 				BF8789F718404AC200C81AB2 /* GameController.framework in Frameworks */,
 				BF7C0E6D189DA30400794093 /* CrashReporter.framework in Frameworks */,
 				BF2F35B5183FF6F9002ACE90 /* CoreMedia.framework in Frameworks */,
@@ -1536,7 +1532,6 @@
 		CC2D56FE1798F2EC00C616EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BFF7615119E731D800C403A0 /* libPods.a */,
 				BF7C0E68189DA30400794093 /* CrashReporter.framework */,
 				BF2638C518700E2400CE55F9 /* CoreMotion.framework */,
 				BF8789F618404AC200C81AB2 /* GameController.framework */,
@@ -1555,7 +1550,6 @@
 				CC2D56FF1798F2EC00C616EB /* Foundation.framework */,
 				CC2D57011798F2EC00C616EB /* CoreGraphics.framework */,
 				CC2D57031798F2EC00C616EB /* UIKit.framework */,
-				CC2D57211798F2ED00C616EB /* XCTest.framework */,
 				B7AFB44A5AB34C2982DE856F /* libPods.a */,
 			);
 			name = Frameworks;
@@ -2027,7 +2021,7 @@
 				ORGANIZATIONNAME = "Riley Testut";
 				TargetAttributes = {
 					BF2F34DB183FF6F9002ACE90 = {
-						DevelopmentTeam = 6XVY5G3U44;
+						DevelopmentTeam = LV23VVAR7A;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -2035,7 +2029,7 @@
 						};
 					};
 					CC2D56FB1798F2EC00C616EB = {
-						DevelopmentTeam = 6XVY5G3U44;
+						DevelopmentTeam = LV23VVAR7A;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -2940,12 +2934,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_ENTITLEMENTS = GBA4iOS/GBA4iOS.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ChinaVDI(Beijing)Technology Co.,Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ChinaVDI(Beijing)Technology Co.,Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SHENZHEN MEIXUNBAO TECHNOLOGY CO., LTD";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/GBA4iOS",
+					"$(PROJECT_DIR)/Pods/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.13",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GBA4iOS/GBA4iOS-Prefix.pch";
@@ -3138,6 +3133,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_ENTITLEMENTS = GBA4iOS/GBA4iOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.13",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GBA4iOS/GBA4iOS-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -3448,6 +3448,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/GBA4iOS",
+					"$(PROJECT_DIR)/Pods/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.13",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GBA4iOS/GBA4iOS-Prefix.pch";
@@ -3485,6 +3486,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_ENTITLEMENTS = GBA4iOS/GBA4iOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.13",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GBA4iOS/GBA4iOS-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -3636,6 +3642,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/GBA4iOS",
+					"$(PROJECT_DIR)/Pods/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.13",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GBA4iOS/GBA4iOS-Prefix.pch";

@@ -543,7 +543,7 @@ static GBAEmulationViewController *_emulationViewController;
     }
     
     GCController *controller = notification.object;
-    [controller setPlayerIndex:GCControllerPlayerIndex1];
+    [controller setPlayerIndex:GCControllerPlayerIndexUnset];
     
     self.externalController = [GBAExternalController externalControllerWithController:controller];
     self.externalController.delegate = self;
