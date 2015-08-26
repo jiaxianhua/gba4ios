@@ -12,9 +12,11 @@
 #import "UITouch+ControllerButtons.h"
 #import "UIDevice-Hardware.h"
 
+#import "iCadeReaderView.h"
+
 @import AudioToolbox;
 
-@interface GBAControllerView () <UIGestureRecognizerDelegate>
+@interface GBAControllerView () <UIGestureRecognizerDelegate, iCadeEventDelegate>
 
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UIView *overlayView;
@@ -59,6 +61,12 @@
         [self addSubview:imageView];
         imageView;
     });
+    
+    // ICade
+    iCadeReaderView *control = [[iCadeReaderView alloc] initWithFrame:CGRectZero];
+    [self addSubview:control];
+    control.active = YES;
+    control.delegate = self;
 }
 
 #pragma mark - Getters / Setters
@@ -159,6 +167,117 @@
     [set removeObject:@(GBAControllerButtonMenu)];
     
     [self.delegate controllerInput:self didPressButtons:set];
+}
+
+//
+//typedef NS_ENUM(NSInteger, GBAControllerButton)
+//{
+//    GBAControllerButtonUp                =  33,
+//    GBAControllerButtonDown              =  39,
+//    GBAControllerButtonLeft              =  35,
+//    GBAControllerButtonRight             =  37,
+//    GBAControllerButtonA                 =  8,
+//    GBAControllerButtonB                 =  9,
+//    GBAControllerButtonL                 =  10,
+//    GBAControllerButtonR                 =  11,
+//    GBAControllerButtonStart             =  1,
+//    GBAControllerButtonSelect            =  0,
+//    GBAControllerButtonMenu              =  50,
+//    GBAControllerButtonFastForward       =  51,
+//    GBAControllerButtonSustainButton     =  52,
+//};
+
+
+#pragma mark - iCade Mode
+- (void)setState:(BOOL)state forButton:(iCadeState)button {
+    NSMutableSet *set = [NSMutableSet set];
+    NSLog(@"iCadeState = %d state = %d", button, state);
+//    if (state) {
+        switch (button) {
+            case iCadeButtonA:
+                [set addObject:@(GBAControllerButtonSelect)];
+                break;
+            case iCadeButtonB:
+                [set addObject:@(GBAControllerButtonL)];
+                break;
+            case iCadeButtonC:
+                [set addObject:@(GBAControllerButtonStart)];
+                break;
+            case iCadeButtonD:
+                [set addObject:@(GBAControllerButtonR)];
+                break;
+            case iCadeButtonE:
+                [set addObject:@(GBAControllerButtonMenu)];
+                break;
+            case iCadeButtonF:
+                [set addObject:@(GBAControllerButtonMenu)];
+                break;
+            case iCadeButtonG:
+                [set addObject:@(GBAControllerButtonStart)];
+                break;
+            case iCadeButtonH:
+                [set addObject:@(GBAControllerButtonA)];
+                break;
+                
+            case iCadeJoystickUp:
+                [set addObject:@(GBAControllerButtonUp)];
+                break;
+            case iCadeJoystickRight:
+                [set addObject:@(GBAControllerButtonRight)];
+                break;
+            case iCadeJoystickDown:
+                [set addObject:@(GBAControllerButtonDown)];
+                break;
+            case iCadeJoystickLeft:
+                [set addObject:@(GBAControllerButtonLeft)];
+                break;
+            default:
+                break;
+        }
+//    }
+//    else {
+//        switch (button) {
+//            case iCadeButtonA:
+//                break;
+//            case iCadeButtonB:
+//                break;
+//            case iCadeButtonC:
+//                break;
+//            case iCadeButtonD:
+//                break;
+//            case iCadeButtonE:
+//                break;
+//            case iCadeButtonF:
+//                break;
+//            case iCadeButtonG:
+//                [set addObject:@(GBAControllerButtonA)];
+//                break;
+//            case iCadeButtonH:
+//                break;
+//                
+//            case iCadeJoystickUp:
+//                break;
+//            case iCadeJoystickRight:
+//                break;
+//            case iCadeJoystickDown:
+//                break;
+//            case iCadeJoystickLeft:
+//                break;
+//            default:
+//                break;
+//        }
+//    }
+    NSLog(@"set = %@", set);
+    [self.delegate controllerInput:self didPressButtons:set];
+}
+
+
+- (void)buttonDown:(iCadeState)button {
+    [self setState:YES forButton:button];
+}
+
+- (void)buttonUp:(iCadeState)button {
+//    [self setState:NO forButton:button];
 }
 
 - (void)updateButtonsForTouches:(NSSet *)touches

@@ -583,6 +583,7 @@ static GBAEmulationViewController *_emulationViewController;
 
 - (void)controllerInput:(id)controllerInput didPressButtons:(NSSet *)buttons
 {
+    NSLog(@"buttons set = %@", buttons);
     if (self.presentedViewController || ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad && [(GBASplitViewController *)self.splitViewController romTableViewControllerIsVisible]))
     {
         return;
@@ -659,6 +660,7 @@ static GBAEmulationViewController *_emulationViewController;
             return;
         }
         
+        NSLog(@"pressButtons:buttons = %@", buttons);
         [[GBAEmulatorCore sharedCore] pressButtons:buttons];
     }
 }
