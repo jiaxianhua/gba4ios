@@ -463,6 +463,7 @@
 		CCFA7237179D340400768D24 /* apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCFA7171179D2EAB00768D24 /* apple.mm */; settings = {COMPILER_FLAGS = "-w"; }; };
 		CCFA7238179D340400768D24 /* ResourceFontUIKit.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCFA7172179D2EAB00768D24 /* ResourceFontUIKit.mm */; settings = {COMPILER_FLAGS = "-w"; }; };
 		CCFA7239179D340400768D24 /* Quartz2dUIKit.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCFA7173179D2EAB00768D24 /* Quartz2dUIKit.mm */; settings = {COMPILER_FLAGS = "-w"; }; };
+		DE4A49D1F20FCFA3676D33A0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AFB44A5AB34C2982DE856F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -542,7 +543,7 @@
 		BF2AC88D18543BCA008928D0 /* GBASyncMoveOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBASyncMoveOperation.m; sourceTree = "<group>"; };
 		BF2AC89018543BD9008928D0 /* GBASyncDeleteOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBASyncDeleteOperation.h; sourceTree = "<group>"; };
 		BF2AC89118543BD9008928D0 /* GBASyncDeleteOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBASyncDeleteOperation.m; sourceTree = "<group>"; };
-		BF2F35D5183FF6F9002ACE90 /* GBA4iOS copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GBA4iOS copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2F35D5183FF6F9002ACE90 /* GBA4iOS-Simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GBA4iOS-Simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF33ECEA19C13127006E534B /* GBALinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBALinkViewController.h; sourceTree = "<group>"; };
 		BF33ECEB19C13127006E534B /* GBALinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBALinkViewController.m; sourceTree = "<group>"; };
 		BF33ECEC19C13127006E534B /* GBALinkNearbyPeersHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBALinkNearbyPeersHeaderFooterView.h; sourceTree = "<group>"; };
@@ -968,6 +969,7 @@
 				BF2F35C0183FF6F9002ACE90 /* CoreGraphics.framework in Frameworks */,
 				BF2F35C2183FF6F9002ACE90 /* UIKit.framework in Frameworks */,
 				BF2F35C3183FF6F9002ACE90 /* Foundation.framework in Frameworks */,
+				DE4A49D1F20FCFA3676D33A0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1538,7 +1540,7 @@
 			isa = PBXGroup;
 			children = (
 				CC2D56FC1798F2EC00C616EB /* GBA4iOS.app */,
-				BF2F35D5183FF6F9002ACE90 /* GBA4iOS copy.app */,
+				BF2F35D5183FF6F9002ACE90 /* GBA4iOS-Simulator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2000,7 +2002,7 @@
 			);
 			name = "GBA4iOS-Simulator";
 			productName = GBA4iOS;
-			productReference = BF2F35D5183FF6F9002ACE90 /* GBA4iOS copy.app */;
+			productReference = BF2F35D5183FF6F9002ACE90 /* GBA4iOS-Simulator.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CC2D56FB1798F2EC00C616EB /* GBA4iOS */ = {
@@ -2729,7 +2731,7 @@
 					"-all_load",
 					"$(inherited)",
 				);
-				PRODUCT_NAME = "GBA4iOS copy";
+				PRODUCT_NAME = "GBA4iOS-Simulator";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2776,7 +2778,7 @@
 					"-all_load",
 					"$(inherited)",
 				);
-				PRODUCT_NAME = "GBA4iOS copy";
+				PRODUCT_NAME = "GBA4iOS-Simulator";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2823,7 +2825,7 @@
 					"-all_load",
 					"$(inherited)",
 				);
-				PRODUCT_NAME = "GBA4iOS copy";
+				PRODUCT_NAME = "GBA4iOS-Simulator";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3024,7 +3026,7 @@
 					"-all_load",
 					"$(inherited)",
 				);
-				PRODUCT_NAME = "GBA4iOS copy";
+				PRODUCT_NAME = "GBA4iOS-Simulator";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3219,7 +3221,7 @@
 					"-all_load",
 					"$(inherited)",
 				);
-				PRODUCT_NAME = "GBA4iOS copy";
+				PRODUCT_NAME = "GBA4iOS-Simulator";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
