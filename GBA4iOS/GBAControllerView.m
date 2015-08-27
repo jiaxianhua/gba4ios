@@ -12,9 +12,11 @@
 #import "UITouch+ControllerButtons.h"
 #import "UIDevice-Hardware.h"
 
+#import "iCadeReaderView.h"
+
 @import AudioToolbox;
 
-@interface GBAControllerView () <UIGestureRecognizerDelegate>
+@interface GBAControllerView () <UIGestureRecognizerDelegate, iCadeEventDelegate>
 
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UIView *overlayView;
@@ -59,6 +61,12 @@
         [self addSubview:imageView];
         imageView;
     });
+    
+    // ICade
+    iCadeReaderView *control = [[iCadeReaderView alloc] initWithFrame:CGRectZero];
+    [self addSubview:control];
+    control.active = YES;
+    control.delegate = self;
 }
 
 #pragma mark - Getters / Setters
@@ -130,6 +138,72 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self releaseButtonsForTouches:touches];
+}
+
+#pragma mark - iCade Mode
+- (void)setState:(BOOL)state forButton:(iCadeState)button {
+    NSMutableSet *iCadePressSet = [NSMutableSet set];
+    
+    switch (button) {
+        case iCadeButtonA:
+            [iCadePressSet addObject:@(GBAControllerButtonSelect)];
+            break;
+        case iCadeButtonB:
+            [iCadePressSet addObject:@(GBAControllerButtonL)];
+            break;
+        case iCadeButtonC:
+            [iCadePressSet addObject:@(GBAControllerButtonStart)];
+            break;
+        case iCadeButtonD:
+            [iCadePressSet addObject:@(GBAControllerButtonR)];
+            break;
+        case iCadeButtonE:
+            [iCadePressSet addObject:@(GBAControllerButtonA)];
+            [iCadePressSet addObject:@(GBAControllerButtonB)];
+            break;
+        case iCadeButtonF:
+            [iCadePressSet addObject:@(GBAControllerButtonA)];
+            [iCadePressSet addObject:@(GBAControllerButtonB)];
+            break;
+        case iCadeButtonG:
+            [iCadePressSet addObject:@(GBAControllerButtonB)];
+            break;
+        case iCadeButtonH:
+            [iCadePressSet addObject:@(GBAControllerButtonA)];
+            break;
+            
+        case iCadeJoystickUp:
+            [iCadePressSet addObject:@(GBAControllerButtonUp)];
+            break;
+        case iCadeJoystickRight:
+            [iCadePressSet addObject:@(GBAControllerButtonRight)];
+            break;
+        case iCadeJoystickDown:
+            [iCadePressSet addObject:@(GBAControllerButtonDown)];
+            break;
+        case iCadeJoystickLeft:
+            [iCadePressSet addObject:@(GBAControllerButtonLeft)];
+            break;
+        default:
+            break;
+    }
+    
+    if (iCadePressSet) {
+        if (state) {
+            [self.delegate controllerInput:self didPressButtons:iCadePressSet];
+        }
+        else {
+            [self.delegate controllerInput:self didReleaseButtons:iCadePressSet];
+        }
+    }
+}
+
+- (void)buttonDown:(iCadeState)button {
+    [self setState:YES forButton:button];
+}
+
+- (void)buttonUp:(iCadeState)button {
+    [self setState:NO forButton:button];
 }
 
 #pragma mark Pressing Buttons

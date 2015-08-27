@@ -731,7 +731,7 @@ extern SysVController vController;
         {
             continue;
         }
-        
+        NSLog(@"button unsignedIntValue = %d", [button unsignedIntValue]);
         vController.inputAction(Input::PUSHED, [button unsignedIntValue]);
     }
     
