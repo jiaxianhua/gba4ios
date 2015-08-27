@@ -140,6 +140,72 @@
     [self releaseButtonsForTouches:touches];
 }
 
+#pragma mark - iCade Mode
+- (void)setState:(BOOL)state forButton:(iCadeState)button {
+    NSMutableSet *iCadePressSet = [NSMutableSet set];
+    
+    switch (button) {
+        case iCadeButtonA:
+            [iCadePressSet addObject:@(GBAControllerButtonSelect)];
+            break;
+        case iCadeButtonB:
+            [iCadePressSet addObject:@(GBAControllerButtonL)];
+            break;
+        case iCadeButtonC:
+            [iCadePressSet addObject:@(GBAControllerButtonStart)];
+            break;
+        case iCadeButtonD:
+            [iCadePressSet addObject:@(GBAControllerButtonR)];
+            break;
+        case iCadeButtonE:
+            [iCadePressSet addObject:@(GBAControllerButtonA)];
+            [iCadePressSet addObject:@(GBAControllerButtonB)];
+            break;
+        case iCadeButtonF:
+            [iCadePressSet addObject:@(GBAControllerButtonA)];
+            [iCadePressSet addObject:@(GBAControllerButtonB)];
+            break;
+        case iCadeButtonG:
+            [iCadePressSet addObject:@(GBAControllerButtonB)];
+            break;
+        case iCadeButtonH:
+            [iCadePressSet addObject:@(GBAControllerButtonA)];
+            break;
+            
+        case iCadeJoystickUp:
+            [iCadePressSet addObject:@(GBAControllerButtonUp)];
+            break;
+        case iCadeJoystickRight:
+            [iCadePressSet addObject:@(GBAControllerButtonRight)];
+            break;
+        case iCadeJoystickDown:
+            [iCadePressSet addObject:@(GBAControllerButtonDown)];
+            break;
+        case iCadeJoystickLeft:
+            [iCadePressSet addObject:@(GBAControllerButtonLeft)];
+            break;
+        default:
+            break;
+    }
+    
+    if (iCadePressSet) {
+        if (state) {
+            [self.delegate controllerInput:self didPressButtons:iCadePressSet];
+        }
+        else {
+            [self.delegate controllerInput:self didReleaseButtons:iCadePressSet];
+        }
+    }
+}
+
+- (void)buttonDown:(iCadeState)button {
+    [self setState:YES forButton:button];
+}
+
+- (void)buttonUp:(iCadeState)button {
+    [self setState:NO forButton:button];
+}
+
 #pragma mark Pressing Buttons
 
 
@@ -167,117 +233,6 @@
     [set removeObject:@(GBAControllerButtonMenu)];
     
     [self.delegate controllerInput:self didPressButtons:set];
-}
-
-//
-//typedef NS_ENUM(NSInteger, GBAControllerButton)
-//{
-//    GBAControllerButtonUp                =  33,
-//    GBAControllerButtonDown              =  39,
-//    GBAControllerButtonLeft              =  35,
-//    GBAControllerButtonRight             =  37,
-//    GBAControllerButtonA                 =  8,
-//    GBAControllerButtonB                 =  9,
-//    GBAControllerButtonL                 =  10,
-//    GBAControllerButtonR                 =  11,
-//    GBAControllerButtonStart             =  1,
-//    GBAControllerButtonSelect            =  0,
-//    GBAControllerButtonMenu              =  50,
-//    GBAControllerButtonFastForward       =  51,
-//    GBAControllerButtonSustainButton     =  52,
-//};
-
-
-#pragma mark - iCade Mode
-- (void)setState:(BOOL)state forButton:(iCadeState)button {
-    NSMutableSet *set = [NSMutableSet set];
-    NSLog(@"iCadeState = %d state = %d", button, state);
-//    if (state) {
-        switch (button) {
-            case iCadeButtonA:
-                [set addObject:@(GBAControllerButtonSelect)];
-                break;
-            case iCadeButtonB:
-                [set addObject:@(GBAControllerButtonL)];
-                break;
-            case iCadeButtonC:
-                [set addObject:@(GBAControllerButtonStart)];
-                break;
-            case iCadeButtonD:
-                [set addObject:@(GBAControllerButtonR)];
-                break;
-            case iCadeButtonE:
-                [set addObject:@(GBAControllerButtonMenu)];
-                break;
-            case iCadeButtonF:
-                [set addObject:@(GBAControllerButtonMenu)];
-                break;
-            case iCadeButtonG:
-                [set addObject:@(GBAControllerButtonStart)];
-                break;
-            case iCadeButtonH:
-                [set addObject:@(GBAControllerButtonA)];
-                break;
-                
-            case iCadeJoystickUp:
-                [set addObject:@(GBAControllerButtonUp)];
-                break;
-            case iCadeJoystickRight:
-                [set addObject:@(GBAControllerButtonRight)];
-                break;
-            case iCadeJoystickDown:
-                [set addObject:@(GBAControllerButtonDown)];
-                break;
-            case iCadeJoystickLeft:
-                [set addObject:@(GBAControllerButtonLeft)];
-                break;
-            default:
-                break;
-        }
-//    }
-//    else {
-//        switch (button) {
-//            case iCadeButtonA:
-//                break;
-//            case iCadeButtonB:
-//                break;
-//            case iCadeButtonC:
-//                break;
-//            case iCadeButtonD:
-//                break;
-//            case iCadeButtonE:
-//                break;
-//            case iCadeButtonF:
-//                break;
-//            case iCadeButtonG:
-//                [set addObject:@(GBAControllerButtonA)];
-//                break;
-//            case iCadeButtonH:
-//                break;
-//                
-//            case iCadeJoystickUp:
-//                break;
-//            case iCadeJoystickRight:
-//                break;
-//            case iCadeJoystickDown:
-//                break;
-//            case iCadeJoystickLeft:
-//                break;
-//            default:
-//                break;
-//        }
-//    }
-    NSLog(@"set = %@", set);
-    [self.delegate controllerInput:self didPressButtons:set];
-}
-
-
-- (void)buttonDown:(iCadeState)button {
-    [self setState:YES forButton:button];
-}
-
-- (void)buttonUp:(iCadeState)button {
-//    [self setState:NO forButton:button];
 }
 
 - (void)updateButtonsForTouches:(NSSet *)touches
